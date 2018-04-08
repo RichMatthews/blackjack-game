@@ -34,20 +34,15 @@ export class Game extends React.Component {
     ],
     deck: [],
     playersHand: [],
-    dealersHand: [],
-    playerBust: false,
-    dealerBust: false,
-    gameOver: false,
-    playerWins: false,
-    dealerWins: false,
+    dealersHand: []
   }
 
-  componentDidMount = () => {
-    this.buildDeck()
+  startGame = () => {
+    return this.buildDeck()
     .then(this.shuffleDeck)
     .then(this.dealToPlayer)
-    .then(setTimeout(this.dealToPlayer, 2000))
-    .then(setTimeout(this.dealToDealer, 4000))
+    .then(() => setTimeout(this.dealToPlayer, 2000))
+    .then(() => setTimeout(this.dealToDealer, 4000))
   }
 
   shuffleDeck = () => {
@@ -138,12 +133,10 @@ export class Game extends React.Component {
     return (
       <div className="mainContainer">
         <div className="setupContainer">
-          <h3> BlackJack </h3>
+          <h3>BlackJack</h3>
           <button onClick={this.startGame}>Start a new game</button>
           <button onClick={this.stick}>Stick</button>
           <button onClick={this.dealToPlayer}>Hit</button>
-          <h3> Initial Cards </h3>
-          <div className="initialCards"></div>
         </div>
         <div className="gameContainer">
           <div className="dealersContainer">
@@ -160,7 +153,7 @@ export class Game extends React.Component {
               handTotal={this.handTotal}
             />
           </div>
-          <div>
+          <div className="resultContainer">
             <h4> Result {this.result()}</h4>
           </div>
         </div>
