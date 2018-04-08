@@ -1,0 +1,52 @@
+.mainContainer{
+  display: flex;
+}
+.initialCards{
+  width: 90px;
+  height: 120px;
+  border: 1px solid black;
+}
+
+.cardContainer{
+  display: flex;
+  width: 500px;
+}
+
+.card{
+  width: 90px;
+  height: 120px;
+  border: 1px solid black;
+  margin-right: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playersCard{
+  animation: playersCardMove 2s;
+  animation-fill-mode: forwards;
+}
+
+.dealersCard{
+  animation: dealersCardMove 2s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes playersCardMove {
+  from {left: 0px; bottom: 0px}
+  to {left: 100px; bottom: 0px}
+}
+
+@-webkit-keyframes dealersCardMove {
+  from {left: 0px; bottom: 0px}
+  to {left: 100px; bottom: 0px}
+}
+
+
+
+.cardImage {
+  max-width: 40px;
+  max-height: 40px;
+}
