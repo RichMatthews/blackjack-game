@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import Example from '../../components/Example';
+import Game from '../../components/Game';
 import reducer from '../reducers';
 
 const store = createStore(
@@ -18,7 +18,7 @@ class Component extends React.Component{
   render(){
     return (
       <Provider store={store}>
-        <Example />
+        <Game />
       </Provider>
       )
   };

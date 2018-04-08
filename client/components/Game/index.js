@@ -9,7 +9,7 @@ import diamonds from '../../../images/diamonds.jpg';
 import spades from '../../../images/spades.jpg';
 import hearts from '../../../images/hearts.png';
 
-export class Example extends React.Component {
+export class Game extends React.Component {
   state = {
     suits: [
       {name: 'clubs', image: clubs},
@@ -180,4 +180,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Example);
+)(Game);
